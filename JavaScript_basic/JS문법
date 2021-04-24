@@ -82,3 +82,26 @@ console.log(a === b); = false 타입값까지 비교 [일치연산자]
 
 ## 조건문 ##
 
+#if , else , else if
+else는 if가 false 일때 실행이 됨
+순서는 if , else if , else 순으로 작성
+
+===========
+
+## 논리 연산자 ##
+
+|| (or)
+여러개중 하나라도 true면 true
+즉하나라도 true면 false
+&& (and)
+모든값이 true일때 true
+즉 하나라도 false 일때 false
+!(not)
+true 면 false 
+false 면 true 로 바꿔줌
+
+#평가#는 or는 첫번째 true를 발견 하는 즉시 평가를멈춤
+and는 false를 발견하면 멈춤
+ex)좋은시력(90프로),운전면허소지(60프로),여군(7프로) 라면
+여군중에 운전면허소지한 시력이좋은사람 ->이러면 여군에서 93프로 불필요데이터 거름
+이것이 최적화
