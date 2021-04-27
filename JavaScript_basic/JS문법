@@ -118,6 +118,37 @@ if(name === "TOM" || age > 19 ){
 }
 
 문제2. 나이를 입력받아 성인이 아니면 돌아가 표시
+<<<<<<< HEAD
+=======
+
+const age = prompt("나이 입력해주세요"); 
+
+if(age > 19) {
+    console.log("통과");
+} else { 
+    console.log("탈락");
+}
+
+내가쓴문제
+
+const age = prompt('나이를 입력해주세요');
+const isAdult = age > 19;
+
+if(!isAge){
+    console.log("돌아가"); 
+}
+
+문제3. 남자이고, 이름이 Mike 이거나 성인이면 통과
+
+const gender = "F";
+const name = "Jane"
+const isAdult = true;
+
+// if(gender === "M" && name === "Mike" || isAdult){
+if(gender === "M" && (name === "Mike" || isAdult)){
+    console.log("통과");
+} else { 
+    console.log("e돌아가");
 
 const age = prompt("나이 입력해주세요"); 
 
@@ -177,6 +208,6 @@ do{
 
 while문 과 차이점 : 한번은 무조건 실행시킴!!
 
-==================
+=====================
 
 ## break , continue ## 
