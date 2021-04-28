@@ -211,3 +211,26 @@ while문 과 차이점 : 한번은 무조건 실행시킴!!
 =====================
 
 ## break , continue ## 
+
+1. break : 멈추고 (반복문)빠져나옴
+2. continue : 멈추고 다음 (반복문)으로 진행
+※while(true는 무한반복이라 조심해야됨)
+#break
+while(true){
+    let answer = confirm("계속 할까요?');
+    if(!answer){
+        break;
+    }
+} 
+#continue
+#짝수만
+
+for(let i = 0 ; i < 10; i++ ){
+    if(i%2){
+        continue;
+    }
+    console.log(i)
+}
+
+TIP: 정확한 횟수가 표기되어있으면 for / 횟수가 지정되어있지 않으면 while 을 추천
+=============================
