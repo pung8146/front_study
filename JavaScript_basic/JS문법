@@ -234,3 +234,40 @@ for(let i = 0 ; i < 10; i++ ){
 
 TIP: 정확한 횟수가 표기되어있으면 for / 횟수가 지정되어있지 않으면 while 을 추천
 =============================
+
+## switch ##
+
+tip. switch문은 if else 문을 알면 다 대치할 수 있음
+tip2. case가 다양할 경우 사용할수있음
+
+switch(평가){       if(평가 == A){
+    case A :            // A일때 코드
+    // A일때 코드   } else if (평가 == B){
+    case B :            // B일때 코드
+    // B일때 코드      }
+}
+@두 코드는 일치함
+
+let fruit = prompt('무슨과일을 먹고싶으신가요?');
+
+switch(fruit){
+    case '사과':
+        console.log('100원 입니다');
+        break;
+    case '바나나':
+        console.log('200원 입니다');
+        break;
+    case '딸기':
+        console.log('300원 입니다');
+        break;
+    case '멜론':
+    case '수박':
+        console.log('400원 입니다');
+        break;
+    default : 
+        console.log("그런과일은 팔지않습니다");
+        break;
+}
+@ break를 만나기전까지 계속 실행시킴
+
+================
