@@ -1,4 +1,4 @@
-JavaScript
+### JavaScript ###
 
 @변수는 어떤 정보에 이름을 붙여서 저장하고싶을때 사용
 ex)name = "mike"; age=30; (위험한방식) 
