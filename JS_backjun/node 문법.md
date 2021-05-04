@@ -35,7 +35,7 @@ standard output
 
 * readline.Interface는 readline.createInterface() 메쏘드를 통해 생성 가능합니다.
 * Node.js 문서에 나오는 readline 예시를 실행시켜 보면 다음과 같은 출력이 나옵니다.
-
+* 기본적으로 매개변수 line에 할당되는것이 입력값이며, 문자열로 할당 됩니다.
 <pre>
 const readline = require('readline');
 
@@ -50,6 +50,5 @@ rl.on("line", function(line) {
 }).on("close", function() {
   process.exit();
 });
-
-
 </pre>
+* fs모듈을 사용하면 readline 시간 초과가 나올때 사용하는것을 추천
