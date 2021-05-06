@@ -4,7 +4,7 @@ const rl = readline.createInterface({
     output:process,stdout
 });
 
-const input = [];
+// const input = [];
 
 // rl.on('line', (line) => {
 //     input.push(line.split(' '));
@@ -21,6 +21,13 @@ const input = [];
 
 // 위에 반복문 으로 하고싶었는데 안됨 ..
 
-rl.on('line', (line) => {
-    
+const finiteSum = (N) => {
+    return N*(N+1)/2; // 가지수 
+}
+
+rl.on('line', line => {
+    const input = parseInt(line);
+    console.log(finiteSum(input));
+}).on('close', () => {
+    process.exit();
 })

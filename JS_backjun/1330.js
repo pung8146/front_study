@@ -29,3 +29,27 @@ if (A > B) {
 } else {
   console.log('==');
 }
+
+// 2번째 풀기
+const readline = require('readline');
+const rl = readline.createInterface({
+  input:process.stdin,
+  output:process.stdout
+});
+
+rl.on('line' , (line) => {
+  const input = line.split(' ');
+
+  const A = parseInt(input[0]);
+  const B = parseInt(input[1]);
+
+  if ( A > B ){
+    console.log(">");
+  }else if( A < B){
+    console.log("<");
+  }else{
+    console.log("==");
+  };
+}).on('close' , () => {
+  process.exit();
+})
