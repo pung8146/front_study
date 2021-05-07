@@ -16,4 +16,13 @@ rl.on('line', (line) => {
 })
 
 // 위에코드는 시간이 너무많이걸려 초과되어버림
+let fs = require('fs');
+let input = Number(require('fs').readFileSync('/dev/stdin').toString());
 
+let answer = '';
+
+for (let i = 1; i <= input; i++) {
+    answer += i + '\n';
+}
+
+console.log(answer);
