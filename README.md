@@ -94,4 +94,9 @@ EX2)표현식 삽입 : ${} 사이에 변수나 연산등을 삽입할 수 있게
 value += 10' 은
 value = value + 10; 의미를가지며 변수를 생략할수있음.
 
-## 
+## SCSS ##
+
+## querySelectorAll vs querySelector ##
+
+## idx ##
+index number ?
