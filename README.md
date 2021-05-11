@@ -26,6 +26,16 @@ fs모듈 : 파일 시스템에 접근하는 모듈.
 
 ### parseInt ###
 parseInt() - 문자열을 정수로 바꾸는 함수입니다.
+ex) "3.14" -> parseInt('3.14') => 3
+ex) parseInt("3월") => 3
+
+### parseFloat ###
+소수까지 표현
+ex) "3.14" -> parseFloat('3.14') => 3.14
+
+### Number ###
+ex) "3.14" -> Number('3.14') => 3.14
+ex) Number("3월") => NaN 
 
 ### readline ###
 @readline 모듈은 한 번에 한 줄씩 Readable 스트림 (예 : process.stdin)에서 데이터를 읽기위한 인터페이스를 제공합니다. 다음을 사용하여 액세스 할 수 있습니다.
@@ -100,3 +110,34 @@ value = value + 10; 의미를가지며 변수를 생략할수있음.
 
 ## idx ##
 index number ?
+
+## == 와 === 차이 #
+== 비교형 
+=== 문자열 까지 비교  
+
+
+## navigator userAgent ##
+navigator userAgent 함수를 사용하여
+유저의 (접속 브라우저 , 모바일 기기) 를 파악할수있음
+그러나!! 요새는 모더나이저 같은 JS라이브러리로
+사용되는 경우가 더많음
+
+## substr / substring ##
+
+## 거듭제곱 ##
+2 ** 3 = 8
+
+## 형변환 ##
+문자열 + 숫자 = 문자열
+문자열 - 숫자 = NaN
+
+## 컴퓨터의 부동소수점 계산 ##
+컴퓨터는 2진법이기에 소수계산에서 생각한값이 나오지않을때가있음
+보통 (소수 * 10 + 소수 * 10) / 10 = 으로계산
+
+## 문자열 끼리 비교가능 ##
+ 'b' > 'a' true : 보통 사전순으로 커짐
+ *특수문자도 비교가능 charCodeAt() 을 사용하면 알 수 있음
+
+## 형변환 했을때 false 가 되는값 8가지 ##
+false, ''(빈 문자열),0,NaN, nudefined, nullm doucment.all
