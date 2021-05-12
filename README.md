@@ -141,3 +141,89 @@ navigator userAgent 함수를 사용하여
 
 ## 형변환 했을때 false 가 되는값 8가지 ##
 false, ''(빈 문자열),0,NaN, nudefined, nullm doucment.all
+
+## for 문을 보면 while문으로 서로 바꿔보는 연습 ##
+별찍기 숙제 등등
+
+## 조건문 에 들어가면 false 되는 6가지 ##
+1. 문자열에 빈문자열
+2. 숫자0
+3. boolean false
+4. null
+5. undefined
+6. NaN
+
+## 함수 ##
+선언방법
+ 1. function() {} 옜날 선언
+
+ 2. () => {} 요즘 방법
+
+변수명 붙이는법
+ 1. function a() {} // 함수 선언문  
+ 2. const b = function() {} ;//함수 표현식
+ 3. const c = () => {}; //함수 표현식(화살표 함수)
+
+## 콜백 ##
+1. 익명함수는 주로 콜백에 쓰임
+2. 콜백은 다른 함수가 실행을 끝낸 뒤 실행되는 — call back 되는 함수를 말한다.
+
+## 매개변수와 인수 ##
+1. 함수를 선언할때 파라미터(매개변수) / 호출 할땐 아큐먼트
+<pre>
+function a(parameter) {
+  console.log(parameter);
+}
+a('argument');
+</pre>
+2. 함수가 하나의 매개변수와 하나의 인수만을 가지는것은 아닙니다.
+   짝을 맟추어 이루어짐 / 
+<pre>
+function a (w, x, y, z) {
+  console.log(w, x, y, z);
+  console.log(arguments);
+}
+a('Hello', 'Paramter', 'Aregument');
+</pre>
+1. 위코드를 실행시
+Hello Parameter Arguemnt undefined
+Arguments(3) ['Hello', 'Parameter', 'Arguemnt'] 
+
+## 객체 리터럴 ##
+배열 도 객체고 함수도 객체이다.
+객체리터럴은 배열이나 함수가 아닌애들중에서 특정모양을 가진애들을
+객체 리터럴이라고 부른다.
+1. 배열과 가장큰차이는 속성 마다 이름이 붙어있음
+2. { } 을 사용함 
+<pre>
+const 객체 = {
+  속성 1 이름: 속성 1 값,
+   bc : 'hello',
+  '2ca': 'hello1', // 앞에 숫자가 되있을때 ""붙임
+  'c a': 'hello2', // 공백이 들어가있을때 ""붙임
+  'c-a': 'hello3', // 특수문자가 들어가있을때 ""붙임}
+</pre>
+3. const bc = 'date';
+   console.log(객체['bc']);
+   console.log(객체[bc]); // 객체['date']와 같음
+# 추가 삭제 #
+추가 방법 : 객체.신규이름 = '생성';
+delete 추가 방법 : 객체.신규이름 = '생성'; // 삭제됨
+
+## (소)메서드 이해하기 ##
+객체에 속성값으로 함수를 넣었을때
+이 속성을 특별히 메서드(method)라고 합니다.
+ex)console.log('hi') 콘솔 개체안에 log 메소드 = 브라우저가 기본제공
+
+# (소)객체 간의 비교 (원시값과 차이점) #
+<pre>
+{} === {} // 객체 끼리 비교하면 무조건 false가 나옴 + (배열 함수도)
+</pre>
+<pre>
+const a = { name: 'hoon' }; // 객체 리터럴
+const array = [1, 2, a]; // 배열 리터럴
+console.log(a === array[2]);
+</pre>
+
+
+

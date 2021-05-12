@@ -1,5 +1,14 @@
 ### JavaScript ###
 
+
+## 변수 ##
+var A = 1+2; => 변수 이름 (선언하다,대입하다) 값
+선언문 명령문이라고함 , 그래서 ; 명령하는거라 들어감
+초기화 한다고도 함 !
+
+# null #
+바꿀때 null 바꿔주면 다른개발자가 인지하기에도 좋음
+
 @변수는 어떤 정보에 이름을 붙여서 저장하고싶을때 사용
 ex)name = "mike"; age=30; (위험한방식) 
 ++;세미클론은 끝났다는걸 표시 안써도되지만 쓰는걸 추천
@@ -12,10 +21,10 @@ ex)name = "mike"; age=30; (위험한방식)
     ex) let name = "Mike";
 @const : 변하지 않는 값은 const 왠만하면 const로 하고 차후에 let로 변경   
  @@ 1. 변수는 문자와 숫자, $와 _만 사용 ex)let_ 1; let $ = 3
-    2. 첫글자는 숫자가 될 수 없습니다. 
-    3. 예약어는 사용할 수 없습니다.
-    4. 가급적 상수는 대문자로 알려주세요 ex) const MAX_SIZE = 99;
-    5. 변수명은 읽기 쉽고 이해할 수 있게 선언
+    1. 첫글자는 숫자가 될 수 없습니다. 
+    2. 예약어는 사용할 수 없습니다.
+    3. 가급적 상수는 대문자로 알려주세요 ex) const MAX_SIZE = 99;
+    4. 변수명은 읽기 쉽고 이해할 수 있게 선언
 
 @자료형 
     "" = '' 차이 별로없음 그래도 ""가좋음
@@ -86,7 +95,32 @@ console.log(a === b); = false 타입값까지 비교 [일치연산자]
 else는 if가 false 일때 실행이 됨
 순서는 if , else if , else 순으로 작성
 
+# switch 문의 기본 형식 #
+switch (조건식) {
+     case 비교조건식 :
+     동작문;
+ }
+스위치는 조건식 비교조건식이 같아야 실행이 된다.
+
+케이스 아래 구문이 한번 실행되면 그아래도 다 실행됨
+switch (조건식){
+    case A :
+        console.log('A 틀림');
+    case B :
+        console.log(' B 맞음');
+    case C :
+        console.log(' C 틀림');
+}
+실행결과는 B 맞음 , C 틀림 이 실행됨
 ===========
+
+## 조건부 연산자 ##
+
+조건부 연산자의 기본형식 
+
+조건식 ? 참일때 실행되는식 : 거짓 일때 실행되는 식
+ex) 5 > 0? '참 입니다': '거짓입니다';
+
 
 ## 논리 연산자 ##
 
@@ -184,10 +218,12 @@ if(gender === "M" && (name === "Mike" || isAdult)){
 
 ## 반복문(for, while, do while) ##
 
-1. for문
+1. for문 
+
 for(let i = 0; i < 10; i++) {
     // 반복할 코드 for문
 }
+※참고로 for문의 시작, 조건식 , 생략가능 (무한반복 날수있음)
 
 2. while문
 let = 0;
@@ -207,7 +243,7 @@ do{
 }while(i<10)
 
 while문 과 차이점 : 한번은 무조건 실행시킴!!
-
+** 반복문은 연습이 필요함  !! ** 
 =====================
 
 ## break , continue ## 
@@ -420,7 +456,7 @@ let showError = () => {
     console.log('error');
 }
 
- ============ 
+=================== 
 
  ## Object ##
  
@@ -500,6 +536,9 @@ for(x in Mike){
 =========================
 
 ## 객체(Object)- method, this ##
+
+객체는 자료형의 일종으로 다양한값을 모아둔 또다른 값입니다.
+종류는 크게 : 배열 , 함수 , 배열이나 함수가 아닌 객체 로 나눌 수 있습니다.
 
 @method: 객체 프로퍼티로 할당 된 함수
 ex)
@@ -611,7 +650,11 @@ boy.sayThis(); // 화살표 함수로 작성하면 window를 가리킴
                   0      1         29
 let students = ['철수','영희',...'영수'];
 
-@배열의 특징
+이때 이름들을 요소라고함
+인덱스 0, 인덱스1 라고 불러도됨
+
+
+# 배열의 특징 #
 : 배열은 문자 뿐만 아니라, 숫자, 객체, 함수등도 포함할 수 있음
 ex)
 let arr = [
@@ -626,8 +669,63 @@ let arr = [
         console.log('TEST');
     }
 ];
-@length : 배열의 길이, push():배열 끝에 추가,pop():배열 끝 요소 제거
-@shift, unshift 배열 앞에 제거 추가 /추가 unshift , 제거는 unshift
+# length #  
+: 배열의 길이, push():배열 끝에 추가,pop():배열 끝 요소 제거
+
+# unshift, shift #
+ 배열 앞에 추가 제거 /추가 unshift , 제거는 shift
+
+# splice #
+const arr = ['a','b','c','d','f','g'];
+[중간삭제]arr.splice(2,3) -> ( c, d ,f )가 삭제됨
+[기준점삭제]arr.splice(3) -> (a b) 남고 다사라짐
+[삭제후추가]arr.splice(1,3,'타','파') -> ['a','타','파','f','g']
+[도중추가]arr.splice(2,0,'다') ->['a','b','다','c',,,,]
+
+# (소)배열에서 요소찾기 #
+includes 로 배열의 특정요소 찾기
+const arr = ['a','b','c','d'];
+const result = arr.incoludes('a'); true 면 있음
+const result = arr.incoludes('f'); false면 없음
+보통 true / false 있는건 조건문에서 사용
+
+# 검색하고 싶은 값이 몇번째 인덱스인지 찾기 #
+indexOf 와 lastIndexOf
+const arr = ['a','b','a','b','a','b'];
+const result = arr.indexOf('b'); 앞에서 부터 찾음 값은1
+const result = arr.lastIndexOf('a'); 뒤에서부터 찾음 값은4
+const result = arr.indexOf('x'); 없으면 값 (-1)
+
+# 배열의 마지막 요소 찾는법 #
+ex)findLastElement[findLastElement.length - 1]
+무조건 전체 길이의 -1이 마지막요소
+
+# 배열 요소 추가하기 #
+배열의 길이를알때
+  const target ['1','2','3','4'];
+  target[4]= "5"; 
+배열의 길이를 모를때
+  const target ['1','2','3','4'...'?'];
+  target[target.length]]= "55"
+
+# (소)배열 반복하기 #
+배열은 값들을 나열 한것이기때문에 반복문에 사용할때가 많음(while for)
+const arr = ['a','b','c','d'];
+let i = 0;
+while (i < arr.length) {
+    console.log(arr[i]);
+    i++;
+}
+
+
+
+## const 배열 바뀌는 이유 ##
+const 의 배열이 바뀌는게 아니라 내부 객체가 바뀌는것이기때문!
+const 는 상수(엄밀히는 아님)로생각
+새로운값을 =(대입) 하지못하는것!!!
+
+======================================
+
 
 @반복문 : for 
 :배열을 사용하는 가장 큰이유는 반복을 위해서
@@ -637,4 +735,47 @@ tip2: index=0부터 시작하게함
 @반복문 : for ... of
 :for in 은 추천하지않음
  
- ## 배열 ##
+ ## 중첩된 반복문 ##
+ ex)1 한번 직접 계산해보기
+ for (let i = 0, i < 10; i++) {
+     for (let j = 0; j < 10; j++) {
+         console.log(i, j);
+     }
+ }
+ ex)2 한번 직접 계산해보기
+ for (let i = 0; i< 5; i++){
+     if (i % 2 === 0 ) continue;
+     for (let j = 0; j < 5; j++) {
+         if(j % 2 === 0 ) continue;
+         for(let k = 0; k < 5; k++){
+             if (k % 2 === 0 ) continue,
+             console.log(i,j,k);
+         } 
+     }
+ }
+ i == 0 , continue,
+ i == 1 , j == 0 , continue
+ i == 1, j == 1, k == 0 , continue,
+ i == 1, j == 1, k == 1, consoelog(1,1,1);
+ i == 1  j == 1, k == 2 continue
+ i == 1  j == 1, k == 3 console.log(1,1,3);
+ i == 1  j == 1, k == 4 continue
+ i == 1  j == 2, continue
+ i == 1  j == 3, k == 0 continue
+ i == 1  j == 3, k == 1 console,log(1,3,1);
+...
+ 내예상 console.log(1,1,1);console.log(3,3,3); 
+ 답은 cosnole.log(1,1,1);console.log(1,1,3);
+ 맨아래 조건부터 하나씩 올라가야함!
+
+## .repeat() ##
+.repeat() – 문자열을 반복한 값을 반환하는 메서드입니다. IE는 Edge부터 지원합니다.
+
+문법
+string.repeat( count )
+예제
+'abc'.repeat( 2 )
+abc를 두 번 반복한 abcabc를 반환합니다.
+
+## <코드> 사용법 ##
+document.querySelector()
