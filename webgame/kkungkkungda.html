@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>쿵쿵따</title>
+  </head>
+
+  <body>
+    <div><span id="gamer">1</span>번째 플레이어</div>
+    <div>현재 단어 : <span id="word"></span></div>
+    <input type="text" value="" />
+    <button id="submit">제출</button>
+    <script>
+      const player = Number(prompt());
+      const gamer = document.querySelector("#gamer");
+      const $word = document.querySelector("#word");
+
+      let word;
+      let newWord;
+
+      const clickButton = () => {
+        if (word != "" || word[word.length - 1] === newWord[0]) {
+          console.log(number);
+        }
+      };
+    </script>
+  </body>
+</html>

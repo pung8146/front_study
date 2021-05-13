@@ -21,3 +21,11 @@ js문법을 다시공부해야되는지
 자바스크립트 공부 사이트추천
 
 프로그래밍 사고력이 부족한게아닐끼?
+=====
+다음태그들의 내부값을 가져올때 둘중 어느속성을 사용해야 하는가
+input (value)
+button textCotnent
+select value
+div textContent
+textarea value
+span textContent

@@ -779,3 +779,16 @@ abc를 두 번 반복한 abcabc를 반환합니다.
 
 ## <코드> 사용법 ##
 document.querySelector()
+document.querySelectorAll() // 두개이상부터
+document.querySelector('선택자 내부선택자 내부선택자 ... ')
+
+## 유사 배열 ##
+
+## 리스너 함수 / 콜백함수 / 익명함수 #
+
+## textContent ##
+화면에 내용을 변경할때는 대부분 textContent
+
+## value ##
+화면에 내용을 바꿔줄때
+input ,, 등 값은 value로 변경
