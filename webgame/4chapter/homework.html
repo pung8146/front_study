@@ -1,0 +1,100 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<h1>고차함수</h1>
+<h3>고차함수 = 함수간의 중복을 제거하기 위해서</h3>
+<p>
+  const func = () => {
+    return () => {
+      console.log('hello');
+    }
+  }
+</p>
+<p>
+  const innerFunc = func();
+  innerFunc(); // hello가 출력됨
+</p>
+</body>
+
+<script>
+
+const func = (msg) => {
+  return () => {
+    console.log(msg);
+  }
+}
+
+const innerFunc1 = func('hello');
+const innerFunc2 = func('javascript');
+const innerFunc3 = func('hello');
+innerFunc1(); // hello
+innerFunc2(); // javascript
+innerFunc3(); // undefined
+
+const onClickNumber = (number) => (event) => {
+  if (operator) {
+    number += number;
+  } else {
+    numOne += number;
+  }
+  $result.value += number;
+};
+
+const onClickNumber = (number) => {
+  return (event) => {
+    if (operator) {
+    number += number;
+  } else {
+    numOne += number;
+  }
+  $result.value += number;
+  }
+};
+
+// 위랑 아래코드랑 같음
+
+// 중첩제거 1 숙제
+  if (조건A) {
+    if (조건B) {
+      if (조건C) {
+      }
+    } else {
+      if (조건D) {
+        // 나는 어떻게 실행되지? 조건 a와 d가 true 조건 b가 false
+        if (조건E) {
+      } else {
+        // 나는? 조건 a와 d가 true 조건 b,e가 false
+      }
+      // 나는  조건 a와 d가 true 조건 b가 false
+    } else {
+    }
+   } 
+  };
+//   if문 중첩 제거방법
+// 1. 공통된 절차를 각 분기점 내부에 넣는다.
+// 2. 분기점에서 짧은 절차부터 실행하게 if문을 작성한다.
+// 3. 짧은 절차가 끝나면 return(함수 내부의 경우)이나 break(for 문의 내부의 경우)로 중단한다.
+// 4. else를 제거한다.(이때 중첩하나가 제거된다).
+// 5. 다음 중첩된 분기점이 나오면 1~4의 과정을 반복한다.
+  // 중첩제거 1 숙제
+  if (조건A) {
+    if (조건B) {
+      if (조건C) {
+      }
+    } else {
+      if (조건D) {
+      
+        if (조건E) {
+      } else { 
+      }      
+    } else {
+    }
+   } 
+  };
+  </script>
+</html>

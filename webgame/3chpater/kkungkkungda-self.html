@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>쿵쿵따</title>
+  </head>
+
+  <body>
+    <div><span id="gamer">1</span>번째 플레이어</div>
+    <div>현재 단어 : <span id="word"></span></div>
+    <input type="text" />
+    <button id="submit">제출</button>
+    <script>
+      // 넘버값에 따라 if문에 나머지코드를 감싸면 취소시 코드 실행을 막을수있음
+      // 취소하면 값이 null 이 될것이고, 그 값이 number함수에 들어가면 NaN이 됩니다.
+      // NaN 이 if문에들어가면 항상 false 취급되므로
+      const player = Number(prompt("참가하실 플레이어의 수를 입력해주세요"));
+
+      if (number) {
+        const $gamer = document.querySelector("#gamer");
+        const $button = document.querySelector("button");
+        const $word = document.querySelector("#word");
+        const $submit = document.querySelector("#submit");
+        const $input = document.querySelector("input");
+        let word;
+        let newWord;
+
+        const onClickButton = () => {
+          if (!word || word[word.length - 1] === newWord[0]) {
+            // word 가 공백이들어갈수없음 false가 되기에 !!
+            if (newWord.length == 3) {
+              word = newWord;
+              $word.textContent = word;
+
+              const gamer = Number($gamer.textContent);
+              if (gamer === player) {
+                $gamer.textContent = 1;
+              } else {
+                $gamer.textContent = gamer + 1;
+              }
+            } else {
+              alert("3글자만 입력해주세요");
+            }
+          } else {
+          }
+        };
+
+        const onInput = (event) => {
+          newWord = event.target.value;
+        };
+
+        $button.addEventListener("click", onClickButton);
+        $input.addEventListener("input", onInput);
+      }
+    </script>
+  </body>
+</html>
