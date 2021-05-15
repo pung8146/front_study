@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>쿵쿵따</title>
+  </head>
+
+  <body>
+    <div><span id="gamer">1</span>번째 플레이어</div>
+    <div>현재 단어 : <span id="word"></span></div>
+    <input type="text" />
+    <button id="submit">제출</button>
+    <script>
+      const player = Number(prompt("참가하실 플레이어의 수를 입력해주세요"));
+      const $gamer = document.querySelector("#gamer");
+      const $button = document.querySelector("button");
+      const $word = document.querySelector("#word");
+      const $submit = document.querySelector("#submit");
+      const $input = document.querySelector("input");
+
+      let word;
+      let newWord;
+
+      const onClickButton = () => {
+        if (!word || word[word.length - 1] === newWord[0]) {
+          // word 가 공백이들어갈수없음 false가 되기에 !!
+          if (newWord.length == 3) {
+            word = newWord;
+            $word.textContent = word;
+
+            const gamer = Number($gamer.textContent);
+            if (gamer === player) {
+              $gamer.textContent = 1;
+            } else {
+              $gamer.textContent = gamer + 1;
+            }
+          } else {
+            alert("3글자만 입력해주세요");
+          }
+        } else {
+        }
+      };
+
+      const onInput = (event) => {
+        newWord = event.target.value;
+      };
+
+      $button.addEventListener("click", onClickButton);
+      $input.addEventListener("input", onInput);
+    </script>
+  </body>
+</html>
