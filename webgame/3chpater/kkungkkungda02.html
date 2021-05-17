@@ -10,7 +10,7 @@
   <body>
     <div><span id="gamer">1</span>번째 플레이어</div>
     <div>현재 단어 : <span id="word"></span></div>
-    <input type="text" />
+    <input type="text" onkeyup="enterkey()"/>
     <button id="submit">제출</button>
     <script>
       const player = Number(prompt("참가하실 플레이어의 수를 입력해주세요"));
@@ -42,6 +42,13 @@
         } else {
         }
       };
+
+      function enterkey() { 
+        if (window.event.keyCode == 13) {
+          onClickButton;
+        }
+      }
+      
 
       const onInput = (event) => {
         newWord = event.target.value;
