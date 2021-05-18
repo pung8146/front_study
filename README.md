@@ -115,6 +115,11 @@ index number ?
 == 비교형 
 === 문자열 까지 비교  
 
+## innerHTML ##
+html 태그로 인식해서 넣을수있음
+
+## textContent ##
+문자열만 넣을수있음
 
 ## navigator userAgent ##
 navigator userAgent 함수를 사용하여
@@ -226,4 +231,29 @@ console.log(a === array[2]);
 </pre>
 
 
+## Math.random ##
+0 <= Math.radnom() <1 이므로
+ * 9 를하고 +1 를 해줌
 
+## Math.floor ##
+소수점을 버려준다
+ex)Math.floor(Math.raddom() * 9 + 1);
+
+## window.cryprto.getRandomValuese ##
+좀더 랜덤을 정확하게 만들어준다.
+
+## new Set ## 
+중복을 없애줌 
+new Set(input).size // length 로안씀
+추가로 나중에 더 배우고 기입
+## 정규편성식 ##
+자세한 내용 검색 을 할수있음
+
+## join ##
+배열을 문자열로 바꾸는 함수
+기본값은 , ex)[3,1,4,6]
+join(':') => [3:1:4:6]
+
+## spilt ##
+문자열을 배열로 바꿈
+'3146'.split('1') => ["3","46"]

@@ -1,0 +1,72 @@
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form id="form">
+   <input type="text" id="input">
+   <button>확인</button>
+  </form>  
+<div id="logs"></div>
+<script>
+  const $input = document.querySelector('#input');
+  const $form = document.querySelector('#form');
+  const $logs = document.querySelector('#logs')  
+
+  const numbers = [];
+  for(let n = 0; n < 9; n += 1){
+    numbers.push(n+1);
+  }
+
+  const answer = [];
+  for (let n = 0; n <= 3; n += 1){
+    const index = Math.floor(Math.random() * numbers.length) // 0~8 정수
+    answer.push(numbers[index]);
+    numbers.splice(index, 1);
+  }
+  console.log(answer);
+
+  const tries = [];
+  function checkInput(input) { // 검사하는코드
+    if (input.length !== 4) { // 길이는 4가 아닌가
+      return alert (' 4자리를 입력해주세요');
+    }
+    if (new Set(input).size !== 4) {
+      return alert('중복되지 않게 입력해 주세요');
+    }
+    if (tries.includes(input)) {
+      return alert('이미 시도했던 값입니다');
+    }
+    return true;
+  }
+  
+$form.addEventListener('submit', (event) => {
+  event.preventDefault(); // 기본동작막기 왜냐 submit 은 보내기에 새로고침되서 변수가 날라감
+  // console.log('submit', event);
+  const value = $input.value;
+  $input.value = '';
+  if (!checkInput(value)){
+    return;
+  }
+  // 입력값 문제없음
+  if (answer.join('') === value ){
+    $logs.textContent = '홈런!!!';
+    return
+  }
+  if (tries.length >= 9) {
+    const message = document.createTextNode(`패배! 정답은 ${answer.join('')}`);
+    $logs.appendChild(message);
+    return;
+  }
+  // 몇스트라이크인지 몇볼인지 검사
+  treies.push(value);
+})
+</script>
+</body>
+</html>
+
+
+<!-- input 있을때 보통 form 으로 감쌈 --> 
