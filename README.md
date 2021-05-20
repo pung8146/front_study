@@ -257,3 +257,11 @@ join(':') => [3:1:4:6]
 ## spilt ##
 문자열을 배열로 바꿈
 '3146'.split('1') => ["3","46"]
+
+## append / appendchild ##
+append : 노드객체(Node Object) / DOMString(text) 를 사용할 수 있음
+         메서드 return 값을 반환 X
+appendChild : 오직 노드 객체 에만 사용가능 !! 
+              return 값을 반환 O
+
+## 노드 객체 ## 
