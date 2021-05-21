@@ -246,6 +246,7 @@ ex)Math.floor(Math.raddom() * 9 + 1);
 중복을 없애줌 
 new Set(input).size // length 로안씀
 추가로 나중에 더 배우고 기입
+
 ## 정규편성식 ##
 자세한 내용 검색 을 할수있음
 
@@ -261,7 +262,67 @@ join(':') => [3:1:4:6]
 ## append / appendchild ##
 append : 노드객체(Node Object) / DOMString(text) 를 사용할 수 있음
          메서드 return 값을 반환 X
+         문자열은 createTextNode 붙일 필요 없음
+         한번에 여러개를 붙일 수 있음
 appendChild : 오직 노드 객체 에만 사용가능 !! 
               return 값을 반환 O
 
+## indexOf 와 includes ##
+indexOf: 원하는 값이 있다면 해당 인덱스를 알려주고 없으면 -1로 표시
+         대신 자료형으로 똑같아야함 
+includes : true, false 둘중 하나만 알려줌
+
 ## 노드 객체 ## 
+
+## 매개 변수 ##
+
+## forEach ##
+const answer = [3,1,4,6];
+const value = "3214";
+                  3일때 0 / 1일때 1 / 4일때 2 
+ex)const.forEach((요소, i) => {
+    
+}) // 배열에서 반복문 역할 
+for 문 보다 성능은 안좋지만 배열에서 좋을때가 있음
+
+## map ##
+const array = [1, 2, 3, 4];
+각각 2를 곱한 배열을 만들고싶으면
+const result = [];
+for (let i = 0; i<4; i++) {
+  result.push(array[i] * 2);
+};
+
+array.map((element, i) => {
+  return element * 2
+})
+: ※단 기존 배열은 안바뀜 !! 
+
+## fill ##
+arrry(9).file(0).map((el,idx) =>{
+   return idx+1;
+})
+
+## 동기 ##
+
+## 비동기 코드 ##
+
+## 피셔 에이치 셔플 알고리즘 ##
+
+## while vs for 언제쓸까 ##
+while : 1. 조건이 단순할때 2.몇번 반복해야될지 애매할때
+for : 1. 조건이 복잡할때 2.몇번 반복해야하는지 명학할때 3. 추가조건이 들어갈때
+
+## slice vs splice ##
+둘다 배열을 다룰때 자주 사용되는 함수이지만.
+slice() : 원본이 변하지않음 tip ) map
+splice() : 원본을 수정 추가 삭제 가능
+
+## sort ##
+1. 배열을 정렬해준다
+2. 원본을 변형시킴
+3. array.slice().sort((a,b) => {a - b})
+   이렇게 사용시 원본 변형 X
+4. 문자열도 정렬가능
+5. arr.slice().sort((a, b) => {a[0].chartCodeAt() - b[0].charCodeAt()}
+6. arr.slice().sort((a, b) => {a.localeCompare(b)} // 정확히 사전순으로 하고싶을때
