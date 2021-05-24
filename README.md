@@ -1,9 +1,6 @@
 ### front_study ###
-프론트엔드 종합 공부
+프론트엔드 종합 메모
 
-- setInterval : 일정한 시간 간격으로 작업을 수행하기 위해서 사용합니다.
-
-- clearInterval(), clearTimeout()이 실행중인 작업을 중지시키는 것은 아닙니다. 지정된 작업은 모두 실행되고 다음 작업 스케쥴이 중지 되는 것입니다.
 ## 1000 번  A + B ? ##
 
 JAVASCRIPT 로 값을 입력받기 위해서는 
@@ -304,12 +301,17 @@ arrry(9).file(0).map((el,idx) =>{
 })
 
 ## 동기 ##
+코드상의 순서는 위쪽에서 아래대로 
+순서되로 진행되는 코드
 
 ## 비동기 코드 ##
+코드상의 순서는 위쪽에서 아래쪽으로 진행되지 않는
+것들을 비동기 라고한다
 
 ## 피셔 에이치 셔플 알고리즘 ##
-랜덤 정렬을 두가지 방법중하나 다른하나는 sort() 메서드
-
+랜덤 을정하는 두가지 방법중하나 다른하나는 sort() 메서드
+먼저 무작위 인덱스를 하나 뽑은 후, 그 해당되는 요소를 새로운 배열로 옮긴다.
+이를 반복하다보면 새 배열에 무작위로 섞인 숫자들이 들어간다.
 
 ## while vs for 언제쓸까 ##
 while : 1. 조건이 단순할때 2.몇번 반복해야될지 애매할때
@@ -327,4 +329,25 @@ splice() : 원본을 수정 추가 삭제 가능
    이렇게 사용시 원본 변형 X
 4. 문자열도 정렬가능
 5. arr.slice().sort((a, b) => {a[0].chartCodeAt() - b[0].charCodeAt()}
-6. arr.slice().sort((a, b) => {a.localeCompare(b)} // 정확히 사전순으로 하고싶을때
+6. arr.slice().sort((a, b) => {a.localeCompare(b)} // 정확히 사전순으로 하고싶을때 
+
+## var 과 let 차이 ##
+1. var 은 예전에 사용되던 "함수 스코프" 변수 이며 현재는 거의 사용되지 않는다.
+2. let 은 "블록 스코프" 
+3. 그렇기에 let을 사용할때 for 문에 let 변수 값이 고정 되므로 var 사용과 결과값이 다르게 나온다.
+
+## JS background ##
+1. background 를 바꿔줄때
+2. backgroundSize 도 같이 기입해야 리셋을 막아줌
+
+## 객체에서 점 vs [] ##
+1. 점은 보통 "문자열" 을 뜻하고 arr.['문자열'] 
+2. arr.[객체값] 으로 해석된다.
+
+## setTimeout vs setInterval 차이점 ##
+1. setTimeout 은 앞에 코드가 많으면 시간카운트가 점점 밀려날 수 있음
+2. setInterval 은 timeout보다 좀더 정확하기에 정확한 시간을 구현할때는 setInterval 을 추천함
+
+## setInterval vs setTimeout ##
+1. setInterval(함수,밀리초) 은 clearInterval(아이디) 로
+2. setTimeout(함수,밀리초) 은 clearTimeout(아이디)
