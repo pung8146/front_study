@@ -191,9 +191,11 @@ a('Hello', 'Paramter', 'Aregument');
 Hello Parameter Arguemnt undefined
 Arguments(3) ['Hello', 'Parameter', 'Arguemnt'] 
 
-## 객체 리터럴 ##
+## 객체 vs 리터럴 ##
+둘다 여러개 변수를 하나로 묶어두는 역할이다.
 배열 도 객체고 함수도 객체이다.
-객체리터럴은 배열이나 함수가 아닌애들중에서 특정모양을 가진애들을
+배열은 묶는 타입이 비슷비슷 할때
+객체 리터럴은 배열이나 함수가 아닌애들중에서 특정모양을 가진애들을(각각 다른속성이라 이름을 붙여 구분해줘야할때)
 객체 리터럴이라고 부른다.
 1. 배열과 가장큰차이는 속성 마다 이름이 붙어있음
 2. { } 을 사용함 
@@ -350,4 +352,38 @@ splice() : 원본을 수정 추가 삭제 가능
 
 ## setInterval vs setTimeout ##
 1. setInterval(함수,밀리초) 은 clearInterval(아이디) 로
-2. setTimeout(함수,밀리초) 은 clearTimeout(아이디)
+2. setTimeout(함수,밀리초) 은 clearTimeout(아이디) 
+
+## classList ##
+1. 코드.classList.contains('클래스');
+2. 해당클래스가 들어가있으며 true 아니면 false
+3. 사용법 
+   1. 태그.classList.add('클래스'); // 추가 여러개가능
+   2. 태그.classList.replace('기존클래스' , '수정클래스'); // 수정
+   3. 태그.classList.remove('클래스'); // 제거 여러개가능
+
+## new Date() ##
+1. 시각을 직접 지정하고싶을때는 인수로 연, 월 , 일 , 시 , 분 , 초 
+2. 단 !!! "월"은 0부터 시작함 ex) 1월은 0 , 5월은 4
+3. 원하는 것만 구하기 new Date().getDate() 등등 
+4. 예외 년도는 new Date().getFullYear() 
+
+## 평균 구하기 ##
+const average = 변수.reduce((a,c) => a + c) / 변수.length
+
+## target 너무 어려움 찾아보자 ##
+타겟과 화살표 함수에 매개 변수 인자 넣는게 너무 햇갈림 
+왜 ??
+함수 표기방법 setTimeout => 이 아니라 왜 setTimeout(Function 으로 적혀있을까)
+
+## reduce ##
+1. 배열.reduce((누적값, 현잿값, 인덱스, 요소) => { return 결과 }, 초기값 );
+2. 배열.reduce ((누적값 , 현재값 ) => ( 다음 누적값 )); 
+3. 더하기 곱하기를 여러번하거나 나중에 배열을 객체화 < = > 배열화 만들수있음
+<pre>
+배열.reduce((누적값 , 현잿값) => {
+  return 새로운누적값;
+}, 초깃값);
+</pre>
+4. 함수에서 반환되는 값은 다음번 누적값이되고 마지막으로 반환 되는 값이 reduce 메서드의 결과값이 됩니다.
+5. 초깃값을 제공하지 않ㅇ면 배열의 첫 번째 요소가 초깃값이 됩니다.
