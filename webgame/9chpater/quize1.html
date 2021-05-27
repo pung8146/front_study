@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1번 퀴즈</title>
+    <style>
+        table{
+          border-collapse : collapse;
+        }
+        td{
+          border : 1px solid black;
+          width: 40px;
+          height: 40px;
+          text-align: center;
+        }
+      </style>
+</head>
+<body>
+    <script>
+    const $table = document.createElement('table');
+
+    for (let i=0; i<5; i++){
+            const $tr = document.createElement('tr');
+            for (let j = 0; j < 4, j++;) {
+                const $td = document.createElement('td');
+                $tr.append($td);
+            }
+            $table.append($tr);
+        }
+
+        document.body.append($table);
+
+    const array = [];
+    
+    for(let i=0; i<5; i++){
+        const cells = [];
+        for (let j = 0; j < 4; j++){
+            cells.push(1);
+        }
+        array.push(cells)
+    }
+    </script>    
+</body>
+
+</html>

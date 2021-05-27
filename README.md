@@ -1,6 +1,13 @@
 ### front_study ###
 프론트엔드 종합 메모
 
+### false 되는값 ###
+1. 문자열의 빈문자열 
+2. boolean 의 false
+3. 숫자 0
+4. null , nudefined, NaN
+5. documentAll
+
 ## 1000 번  A + B ? ##
 
 JAVASCRIPT 로 값을 입력받기 위해서는 
@@ -388,4 +395,44 @@ const average = 변수.reduce((a,c) => a + c) / 변수.length
 4. 함수에서 반환되는 값은 다음번 누적값이되고 마지막으로 반환 되는 값이 reduce 메서드의 결과값이 됩니다.
 5. 초깃값을 제공하지 않ㅇ면 배열의 첫 번째 요소가 초깃값이 됩니다.
 
-## 이차원 배열 게임 ##
+## 이차원 배열 ##
+배열안에 배열이있고
+그 배열안에 값이있는
+반복문안에 반복분이 나오는 경우도많음
+
+## border-collapse ##
+border-collapse: separate | collapse | initial | inherit ;
+  separate : 표(table)의 테두리와 셀(td)의 테두리 사이에 간격을 둡니다.
+  collapse : 표(table)의 테두리와 셀(td)의 테두리 사이의 간격을 없앱니다. 겹치는 부분은 한 줄로 나타냅니다.
+  initial : 기본값으로 설정합니다.
+  inherit : 부모 요소의 속성값을 상속받습니다.
+
+## 구조분해할당 ?? ##
+1. 객체구조분해할당
+    <pre>
+    const { body } = document;
+    const body = document.body; 
+    </pre>
+    둘다 같은코드 객체안에 속성이 들어있음
+    객체안에 속성이름과 변수이름이 같을때 사용할수있음
+2. 배열구조분해할당
+
+## 이벤트 버블링 vs 이벤트 캡쳐링 ?? ##
+ex) 캡쳐링은 팝업외부를 클릭했을때 자주쓰임
+
+## parentNode vs childern ##
+각 태그에 붙이면 부모와 자식위치에 속하는 태그를 호출함
+
+## 유사배열 ##
+1. 배열 처럼 생겼지만 배열이 아닌것
+   배열은 앞에 숫자만 있음 ex) (3) ['1', '2', '3'];
+2. Array.from($table.유사배열) => 진짜배열로 바꿔준다
+
+## 배열 반복물 forEach 라는데 구글링 필요 ##
+
+## every , some , flat ##
+1. every , some : 둘다 일차형 함수에만 사용가능 !
+2. every : 는 모두가 true 여야 true / 하나라도 false면 false
+3. some : 모두중 단 하나라도 true면 true
+4. 배열.flat => (N-1)차형 배열로 바꿔준다 , 단 1차는 그대로 
+
