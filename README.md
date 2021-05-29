@@ -428,7 +428,11 @@ ex) 캡쳐링은 팝업외부를 클릭했을때 자주쓰임
    배열은 앞에 숫자만 있음 ex) (3) ['1', '2', '3'];
 2. Array.from($table.유사배열) => 진짜배열로 바꿔준다
 
-## 배열 반복물 forEach 라는데 구글링 필요 ##
+## 배열 반복문 forEach 라는데 구글링 필요 ##
+ 
+## rowIndex 와 cellIndex ##
+1. tr 태그는 몇 번째 줄인지를 알려주는 rowIndex
+2. td 태그는 몇 번째 칸인지를 알려주는 cellIndex
 
 ## every , some , flat ##
 1. every , some : 둘다 일차형 함수에만 사용가능 !

@@ -74,18 +74,18 @@
       return hasWinner;
     };
     
-    const auto = (target) => {
-      
-    }
-    
     
     const callback = (event) => {
       // event.stopPropagation(); 버블링 막아줌
       // 칸에 글자가 있나?
-      if (event.target.textContent !== '') {
-      return;
-    }
+      
       event.target.textContent = turn;
+
+      if (event.target.textContent !== '') {
+      const auto = (target) => {
+        Math.random(textContent('바보'))
+      }
+    }
       // 승부확인
       if(checkWinner(event.target)) {
         $result.textContent = `${turn}님이 승리!`;
@@ -107,7 +107,7 @@
       }
       // turn = (turn === 'O' ? 'X' : 'O');
       if (turn === 'O' ) {
-        turn = 'X';
+        turn = 'X'; 
       } else if (turn === 'X') {
         turn = 'O';
       }
