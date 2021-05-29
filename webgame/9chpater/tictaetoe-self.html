@@ -74,44 +74,48 @@
       return hasWinner;
     };
     
-    
-    const callback = (event) => {
-      // event.stopPropagation(); 버블링 막아줌
-      // 칸에 글자가 있나?
-      
-      event.target.textContent = turn;
-
-      if (event.target.textContent !== '') {
-      const auto = (target) => {
-        Math.random(textContent('바보'))
-      }
-    }
-      // 승부확인
-      if(checkWinner(event.target)) {
-        $result.textContent = `${turn}님이 승리!`;
-        $table.removeEventListener('click',callback);
-        return;
-      }
-      // 무승부 검사
-      let draw = true;
-      rows.forEach((row) => {
-        row.forEach((cell) => {
-          if (!cell.textContent) {
-            draw = false;
+    const checkWinnerAndDraw = (target) => {
+      const hasWinner = checkWinner(target);
+          //승자가 있으면
+          if (hasWinner) {
+            $result.textContent = `${turn}님이 승리!`;
+            $table.removeEventListener('click', callback);
+            return;
           }
-        });
-      });
-      if (draw) {
-        $result.textContent = `무승부`;
-        return;
-      }
-      // turn = (turn === 'O' ? 'X' : 'O');
-      if (turn === 'O' ) {
-        turn = 'X'; 
-      } else if (turn === 'X') {
-        turn = 'O';
-      }
-    };
+          // 승자가 없으면
+          const draw = rows.flat().every((cell) => cell.textContent);
+          if (draw) {
+            $result.textContent = `무승부`;
+            return;
+          }
+          turn = turn === 'X' ? 'O' : 'X';
+        };
+      
+  let clickable = true;
+  const callback = (event) => {
+    if (!clickable) {
+      return;
+    }
+    if (event.target.textContent !== '') { // 칸이 이미 채워져 있는가?
+      console.log('빈칸이 아닙니다.');
+      return;
+    }
+    // 빈칸이면
+    console.log('빈칸입니다');
+    event.target.textContent = turn;
+    // 승부 판단하기
+    checkWinnerAndDraw(event.target);
+    if (turn === 'X') {
+      clickable = false;
+      setTimeout(() => {
+        const emptyCells = rows.flat().filter((v) => !v.textContent);
+        const randomCell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
+        randomCell.textContent = 'X';
+        checkWinnerAndDraw(randomCell);
+        clickable = true;
+      }, 1000);
+    }
+  };
 
     for (let i = 0; i < 3; i++ ) {
       const $tr = document.createElement('tr');
@@ -129,4 +133,4 @@
     body.append($result);
   </script>
 </body>
-</html>
+</html> 
