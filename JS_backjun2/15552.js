@@ -2,6 +2,8 @@ let fs = require('fs');
 let input = fs.readFileSync('/dev/stdin').toString().split('\n');
 
 let testcase = Number(input[0]);
+let answer = '';
+
 
 let A = Number(input[i][0]);
 let B = Number(input[i][1]);
