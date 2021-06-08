@@ -3,7 +3,7 @@ let input = fs.readFileSync('/dev/stdin').toString().split(' ');
 
 let count = Number(input);
 
-star = '';
+let star = '';
 
 for (let i = 0; i < count; i++) {
 
