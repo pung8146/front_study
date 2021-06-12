@@ -490,4 +490,28 @@ ex) 캡쳐링은 팝업외부를 클릭했을때 자주쓰임
 ## 객체지향 프로그래밍 ?? ##
 
 ## function vs 화살표 함수 ?? ##
-1. 가장큰 용도의차이 (this) 화살표 함수를 사용하면 외부에 있는 this를 가져올 수 있음
+1. 가장큰 용도의차이 (this) 화살표 함수를 사용하면 외부에 있는 this를 가져올 수 있음 
+
+## return ##
+1. 값을 저장해서 코드안에서 그 값이 필요할때 불러올수있음
+2. return 하면 function 은 작동을 멈추고 결과 값을 return하고 끝나버림
+
+## document 의 중요한점 ##
+1. document 를 통해서 html 을 불러올수있다
+  1. document.ElementById(샵필요없음);
+2. 그것을 우리가 원하는대로 수정할수있음!
+3. querySelector 사용할때 (".")을 붙여서 호출하는 이유는 css형식으로 불러오기때문
+4. querySelector 여러개 있어도 맨첫번째거만 가져옴 
+
+## classList ??? ##
+
+## localStorage ##
+1. 다양한 데이터를 저장하는 방법중 가장 쉬운방법
+2. localStroage.(setItem(키 밸류() : 저장소에 저장함 / getItem : 저장된걸 불러옴 / removeItem : 저장 되있는것을 삭제); 
+
+
+
+
+
+
+
