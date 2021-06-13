@@ -461,7 +461,7 @@ ex) 캡쳐링은 팝업외부를 클릭했을때 자주쓰임
 ## JSON ##
 1. JSON이란?
     JSON은 JavaScript Object Notation의 약자로, 브라우저와 서버사이에서 오고가는 데이터의 형식이다.
-2. JSON.stringify : js값이나 객체를 json 문자열로 변환
+2. JSON.stringify : js값이나 객체를 json 문자열(String)로 변환
 3. 간단한 객체는 JSON.parse(JSON.stringify(객체))를 사용해도 크게 문제는 없으나
    다만 성능도 느리고 함수나 Math, Date같은 객체를 복사할 수 없다는 단점이 있습니다.
    실무에서는 lodash 같은 라이브러리(다른사람들이 미리만들어둔 코드)를 사용하곤 합니다.
@@ -510,8 +510,14 @@ ex) 캡쳐링은 팝업외부를 클릭했을때 자주쓰임
 2. localStroage.(setItem(키 밸류() : 저장소에 저장함 / getItem : 저장된걸 불러옴 / removeItem : 저장 되있는것을 삭제); 
 
 
+## padStart() ##
+1. string 에서 쓸수있는 function
+2. padStart(원하는글자길이,붙이고싶은숫자) ex)1.padStart(2,"0") => 01
+3. 숫자에 써야할때 Number / 숫자가 기존에있다면 String 을 붙여서 
+## padEnd() ##
+1. padStart() 동일 차이는 숫자가 뒤에붙음!!
 
+## innerText , textContent, innerHTML ?? ##
+1. 등 비슷한거 정리해야지
 
-
-
-
+## json ?? ##
