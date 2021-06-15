@@ -504,7 +504,8 @@ ex) 캡쳐링은 팝업외부를 클릭했을때 자주쓰임
 4. querySelector 여러개 있어도 맨첫번째거만 가져옴 
 
 ## classList ??? ##
-
+1. classList 속성은 읽기 전용이지만 add () 및 remove () 메서드를 사용하여 수정할 수 있습니다
+2. 한번에 여러 클래스들을 확인 할 수 있음
 ## localStorage ##
 1. 다양한 데이터를 저장하는 방법중 가장 쉬운방법
 2. localStroage.(setItem(키 밸류() : 저장소에 저장함 / getItem : 저장된걸 불러옴 / removeItem : 저장 되있는것을 삭제); 
