@@ -1,3 +1,5 @@
+// 1. 막힌점 어떠한 정수들이 주어지는지를 몰름
+// 2. 최솟값과 최댓값을 구하는 방법?
 let fs = require('fs');
 let input = fs.readFileSync('/dev/stdin').toString().split(' ');
 

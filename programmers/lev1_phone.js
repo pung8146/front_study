@@ -7,7 +7,7 @@
 //  4.6 왼손에 가까우면 왼손으로 터치(else)
 // 5.
 
-let leftHand = [];
+let leftHand = [""];
 let rightHand = [];
 
 function solution(numbers, hand) {
