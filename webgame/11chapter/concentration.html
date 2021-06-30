@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>concentration</title>
+  </head>
+  <style>
+    .card {
+      display: inline-block;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      width: 70px;
+      height: 100px;
+      perspective: 140px;
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .card.flipped .card-inner {
+      transform: retateY(180deg);
+    }
+
+    .card-front {
+      background: navy;
+    }
+
+    .card-front,
+    .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 1px solid black;
+      backface-visibility: hidden;
+    }
+
+    .card-back {
+      transform: rotateY(180deg);
+    }
+  </style>
+  <body>
+    <div id="wrapper"></div>
+    <script>
+      const $wrapper = documnet.querySelector("#wrapper");
+      const total = 12;
+      const colors = [
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "aqua",
+        "white",
+        "pink",
+      ];
+      let colorCopy = colors.concat(colors); // 원본에 영향주지않고 새로만듬!
+      let shuffled = [];
+
+      function shuffle() {
+        // 피셔-예이츠 셔플
+        for (let i = 0; colorCopy.length > 0; i += 1) {}
+      }
+    </script>
+  </body>
+</html>
