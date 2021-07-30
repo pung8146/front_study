@@ -1,12 +1,13 @@
 import './App.css';
-import styles from './App.module.css';
 import Hello from './component/Hello';
 
 function App() {
   return (
   <div className="App">  
+    <h3>props : properties</h3>
     <Hello />
-    <div className={styles.box}>App</div>
+    <Hello />
+    <Hello />
   </div>
   );  
 }
