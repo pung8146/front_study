@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "jsx": "react",  
+        "module": "commonjs",
+        "target": "es6",
+        "checkjs": true
+    },
+    "exclude": ["node_modules"]
+}
