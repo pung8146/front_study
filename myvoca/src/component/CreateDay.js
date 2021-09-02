@@ -3,8 +3,8 @@ import useFetch from "../hooks/useFetch";
 
 export default function CreateDay() {
   const days = useFetch("http://localhost:3001/days");
-  const history = useHistory();
-    
+  const history = useHistory(); 
+  
     function addDay() {
         fetch(`http://localhost:3001/days/`, {
                 method:'POST',
