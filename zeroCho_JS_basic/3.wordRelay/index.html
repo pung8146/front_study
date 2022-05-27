@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>끝말잇기</title>
+  </head>
+  <body>
+    <div><span id="order">1</span>번째 참가자</div>
+    <div>제시어: <span id="word"></span></div>
+    <input type="text" />
+    <button>입력</button>
+    <script>
+      // const number = parseInt(prompt("몇 명이 참가하나요?"), 10); // 10을 적는 이유 10진법이라고 알려줌
+      // console.log(number);
+
+      document.querySelector("input").addEventListener("input", (event) => {
+        console.log("글자 입력", event.target.value);
+      });
+
+      document.querySelector("button").addEventListener("click", function () {
+        console.log("버튼 클릭");
+      });
+    </script>
+  </body>
+</html>
