@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>쿵쿵따</title>
+  </head>
+  <body>
+    <h1 id="subTitle">쿵쿵따</h1>
+    <div><span id="order">1</span>번째 참가자</div>
+    <div>제시어: <span id="word"></span></div>
+    <input type="text" maxlength="3" />
+    <button>입력</button>
+    <div>진행과정 :</div>
+    <script>
+      const number = parseInt(prompt("몇 명이 참가하나요?"), 10); // 10을 적는 이유 10진법이라고 알려줌
+      if (number) {
+        const $button = document.querySelector("button");
+        const $input = document.querySelector("input");
+        const $word = document.querySelector("#word");
+        const $order = document.querySelector("#order");
+        const wordReply = [];
+        let word; // 제시어
+        let newWord; // 새로입력한다
+
+        const onClickButton = () => {
+          if (
+            !word ||
+            (word[word.length - 1] === newWord[0] && newWord.length === 3)
+          ) {
+            // 제시어가 비어있는가
+            // 비어있다
+            word = newWord; // 입력한 단어가 제시어가 된다.
+            $word.textContent = word;
+            const order = parseInt($order.textContent); // 현재 순서
+            if (order + 1 > number) {
+              $order.textContent = 1;
+            } else {
+              $order.textContent = order + 1;
+            }
+          } else if (word[word.length - 1] !== newWord[0]) {
+            // 올바르지 않은가
+            alert("올바르지 않은 단어입니다.");
+          } else if (newWord.length !== 3) {
+            alert("세글지로 입력해주세요");
+          }
+          $input.value = "";
+          $input.focus();
+        };
+
+        const onInput = (event) => {
+          newWord = event.target.value;
+        };
+
+        $button.addEventListener("click", onClickButton);
+        $input.addEventListener("input", onInput);
+      } else {
+        const $subTitle = document.querySelector("#subTitle");
+        $subTitle.textContent = "참가인원을 정해주세요";
+      }
+    </script>
+  </body>
+</html>
